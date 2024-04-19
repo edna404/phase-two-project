@@ -1,0 +1,311 @@
+*,p
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 37.5rem) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 18.75rem) {
+    html {
+      font-size: 35%; } }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: #a8bfc9;
+  background-color: #1a2a33;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  position: relative; }
+
+.wrapper {
+  max-width: 90%; }
+
+.heading-large {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 5rem; }
+  .heading-large--blue {
+    color: #31c3bd; }
+  .heading-large--yellow {
+    color: #f2b137; }
+  @media only screen and (max-width: 37.5rem) {
+    .heading-large {
+      font-size: 2.4rem; } }
+
+.heading-small {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 2rem; }
+
+.display-none {
+  display: none !important; }
+
+.display-grid {
+  display: grid !important; }
+
+.display-block {
+  display: block !important; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.logo-icon {
+  width: 7.2rem;
+  height: 3.2rem; }
+
+.game-menu {
+  text-align: center;
+  max-width: 90%;
+  animation: fadeIn 1s ease-in-out; }
+  .game-menu_choice {
+    margin: 4rem 0;
+    background-color: #1f3641;
+    padding: 2.4rem;
+    border-radius: 1.5rem;
+    box-shadow: inset 0 -0.8rem 0 #111c22; }
+  .pick-marks {
+    margin: 2.4rem 0 1.7rem 0;
+    padding: 0.9rem 0.8rem;
+    background-color: #1a2a33;
+    border-radius: 1rem;
+    display: flex;
+    height: 7rem;
+    align-items: center;
+    justify-content: space-between; }
+  .player_x-mark, .player_o-mark {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50%; }
+    .player_x-mark:hover, .player_o-mark:hover {
+      background-color: #1d303a;
+      cursor: pointer; }
+    .player_x-mark.selected, .player_o-mark.selected {
+      background-color: #a8bfc9; }
+      .player_x-mark.selected > svg, .player_o-mark.selected > svg {
+        fill: #1a2a33; }
+  .player-mark_x-icon, .player-mark_o-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: #a8bfc9; }
+  .pick-mark-footer {
+    text-transform: uppercase;
+    opacity: 0.5; }
+
+.btn {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a2a33;
+  text-transform: uppercase;
+  line-height: 2.5rem;
+  text-align: center;
+  padding: 2.5rem 12rem;
+  border: none;
+  border-radius: 1.5rem;
+  transition: all 0.4s ease; }
+  .btn:hover {
+    cursor: pointer; }
+  .smallBtn {
+    width: auto;
+    display: inline-block;
+    padding: 1.5rem 1.8rem; }
+    .smallBtn:last-child {
+      margin-left: 1rem; }
+  .btn:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .yellowBtn {
+    background-color: #f2b137;
+    box-shadow: inset 0 -0.8rem 0 #b77c0c; }
+    .yellowBtn-small {
+      background-color: #f2b137;
+      box-shadow: inset 0 -0.4rem 0 #b77c0c; }
+      .yellowBtn-small:hover {
+        background-color: #ffc860; }
+    .yellowBtn:hover {
+      background-color: #ffc860; }
+  .blueBtn {
+    background-color: #31c3bd;
+    box-shadow: inset 0 -0.8rem 0 #1d716e; }
+    .blueBtn:hover {
+      background-color: #65e9e4; }
+  .silverBtn {
+    background-color: #a8bfc9;
+    box-shadow: inset 0 -0.8rem 0 #6991a2; }
+    .silverBtn-small {
+      background-color: #a8bfc9;
+      box-shadow: inset 0 -0.4rem 0 #6991a2; }
+      .silverBtn-small:hover {
+        background-color: #dbe8ed; }
+    .silverBtn:hover {
+      background-color: #dbe8ed; }
+
+.gamePlay {
+  display: grid;
+  margin: 5rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  display: none; }
+  .gameBoard-turn {
+    width: 100%;
+    background-color: #1f3641;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: inset 0 -0.4rem 0 #0f191e;
+    display: flex;
+    align-items: center; }
+    @media only screen and (max-width: 37.5rem) {
+      .gameBoard-turn {
+        font-size: 1.4rem;
+        padding: 2rem 1.5rem; } }
+    .gameBoard-turn-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: #a8bfc9; }
+  .gameBoard-restart {
+    width: 50%;
+    background-color: #a8bfc9;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    box-shadow: inset 0 -0.4rem 0 #6991a2;
+    transition: all 0.4s ease;
+    justify-self: flex-end; }
+    .gameBoard-restart:hover {
+      cursor: pointer;
+      background-color: #dbe8ed; }
+    .gameBoard-restartIcon {
+      width: 2rem;
+      height: 2rem; }
+  .gameBoard-play {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 14rem);
+    grid-template-rows: repeat(3, 14rem);
+    grid-gap: 2rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .gameBoard-play {
+        grid-template-columns: repeat(3, minmax(9.6rem, 1fr));
+        grid-template-rows: repeat(3, minmax(9.6rem, 1fr)); } }
+  .gamePlay-card {
+    padding: 3.8rem;
+    background-color: #1f3641;
+    box-shadow: inset 0 -0.8rem 0 #0f191e;
+    border-radius: 1.5rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .gamePlay-card {
+        padding: 2.8rem; } }
+    .gamePlay-card:hover {
+      cursor: pointer; }
+    .gamePlay-card.x, .gamePlay-card.o {
+      cursor: not-allowed;
+      box-shadow: inset 0 -0.5rem 0 #0f191e; }
+    .gamePlay-card.x::before {
+      content: url("./assets/icon-x.svg"); }
+    .gamePlay-card.x.win {
+      background-color: #31c3bd; }
+      .gamePlay-card.x.win::before {
+        content: url("./assets/icon-x-win.svg"); }
+    .gamePlay-card.o.win {
+      background-color: #f2b137; }
+      .gamePlay-card.o.win::before {
+        content: url("./assets/icon-o-win.svg"); }
+    .gamePlay-card.o::before {
+      content: url("./assets/icon-o.svg"); }
+  .gameBoard-play.x .gamePlay-card:not(.x):not(.o):hover::before {
+    content: url("./assets/icon-x-outline.svg"); }
+  .gameBoard-play.o .gamePlay-card:not(.x):not(.o):hover::before {
+    content: url("./assets/icon-o-outline.svg"); }
+  .gameBoard-win, .gameBoard-tie, .gameBoard-loss {
+    color: #1a2a33;
+    text-transform: uppercase;
+    padding: 1.3rem 4rem;
+    border-radius: 1.5rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .gameBoard-win, .gameBoard-tie, .gameBoard-loss {
+        padding: 1rem 2.3rem; } }
+  .gameBoard-win {
+    background-color: #31c3bd; }
+  .gameBoard-tie {
+    background-color: #a8bfc9; }
+  .gameBoard-loss {
+    background-color: #f2b137; }
+  .gameBoard-highlight {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .gameBoard-highlight {
+        font-size: 2rem;
+        line-height: 2.5rem; } }
+ 
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+
+.mode {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding: 6.7rem 0;
+  background-color: #1f3641;
+  text-align: center;
+  transform: translateY(-50%);
+  animation: fadeIn 0.4s ease-in-out;
+  display: none; }
+
+  .mode-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .mode-result {
+        margin-top: 1.5rem; } }
+    .mode-result > *:last-child {
+      margin-left: 2.5rem; }
+      @media only screen and (max-width: 37.5rem) {
+        .mode-result > *:last-child {
+          margin-left: 1.5rem; } }
+  .mode-icon {
+    width: 6.4rem;
+    height: 6.4rem; }
+    @media only screen and (max-width: 37.5rem) {
+      .mode-icon {
+        width: 2.8rem;
+        height: 2.8rem; } }
+  .mode-buttons {
+    margin-top: 3rem; }

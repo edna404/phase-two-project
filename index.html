@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+	  		
+	  <!-- Font Used -->
+	  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet"/>
+
+	  <link rel = "stylesheet" href="styles.css">
+
+	  <script src="script.js" defer></script>
+	  
+	  <title>Frontend Mentor | Tic Tac Toe</title>
+	</head>
+
+
+	<body>
+		<div class="backdrop display-none" id="backdrop">&nbsp;</div>
+
+		<!-- Win, Loss, Tie and Restart modes -->
+		<section class="mode display-none" id="mode"></section>
+
+		<!-- New game menu start -->                             
+		<section class="game-menu wrapper display-block" id="game-menu">
+			<div class="logo">
+				<a class="logo-link" href="index.html" aria-label="logo">
+					<svg class="logo-icon">
+						<use xlink:href="./assets/logo.svg#logo"></use>
+					</svg>
+				</a>
+			</div>
+
+			<div class="game-menu_choice">
+				<header class="game-menu_header">
+					<h4 class="heading-small">Pick player 1's mark</h4>
+				</header>
+				<div class="pick-marks" id="pick_mark">
+					<div class="player_x-mark" id="x">
+						<svg class="player-mark_x-icon">
+							<use
+								xlink:href="./assets/icon-x-default.svg#icon-x-default"
+							></use>
+						</svg>
+					</div>
+					<div class="player_o-mark selected" id="o">
+						<svg class="player-mark_o-icon">
+							<use
+								xlink:href="./assets/icon-o-default.svg#icon-o-default"
+							></use>
+						</svg>
+					</div>
+				</div>
+				<div class="pick-mark-footer">Remember: X goes first</div>
+			</div>
+
+			<div class="game-menu_buttons">
+				<button class="btn yellowBtn" id="vs-cpu">New game (vs cpu)</button>
+				<button class="btn blueBtn" id="vs-player">New game (vs player)</button>
+			</div>
+		</section>
+		<!-- New game menu end -->
+
+
+	    <!-- Game board start -->
+		<section class="gamePlay wrapper display-none" id="gamePlay">
+			<div class="gamePlay-xo">
+				<div class="logo">
+					<svg class="logo-icon">
+						<use xlink:href="./assets/logo.svg#logo"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="gameBoard-turn heading-small" id="gamePlay-turn"></div>
+			<div id="restart-btn" class="gameBoard-restart">
+				<svg class="gameBoard-restartIcon">
+					<use
+						xlink:href="./assets/icon-restart.svg#icon-restart"
+					></use>
+				</svg>
+			</div>
+			<div class="gameBoard-play" id="gameBoard_play">
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+				<div class="gamePlay-card"></div>
+			</div>
+			<div id="x-win" class="gameBoard-win"></div>
+			<div id="tie" class="gameBoard-tie"></div>
+			<div id="o-win" class="gameBoard-loss"></div>
+		</section>
+		<!-- Game board end -->
+	</body>
+</html>
